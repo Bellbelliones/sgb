@@ -4,7 +4,7 @@
 
 ---
 
-# **INTEGRANTES**
+## **INTEGRANTES**
 
 - **Faustino Marcos** : 2023 - XXXX
 - **Mily Dos Santos** : 2023 - 0934
@@ -12,24 +12,24 @@
 
 ---
 
-# **Sobre o Projeto**
+## **Sobre o Projeto**
 
 Este **Sistema de Gestão de Biblioteca** tem por finalidade melhorar a gestão das tarefas em uma biblioteca, melhorando o desempenho das funções entre os funcionários e os leitores, criando assim um ambiente controlado e devidamente bem monitorado.
 
 ---
 
-# **Funcionalidades**
+## **Funcionalidades**
 
-# **Tecnologias**
+## **Tecnologias**
 
-# **Estrutura do Projecto**
+## **Estrutura do Projecto**
 
-# **Classes**
+## **Classes**
 
-# **Atributos**
+## **Atributos**
 
-# **Métodos**
+## **Métodos**
 
-# **Como Executar**
+## **Como Executar**
 
-# **Futuras melhorias**
+## **Futuras melhorias**
