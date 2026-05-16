@@ -56,11 +56,11 @@ O presente sistema possui as seguintes funcionalidades:
 
 ## **Atributos**
 
-### 1 Biblioteca
+1 Biblioteca
 
 - ...
 
-### 2 Livros
+2 Livros
 
 - id_livro;
 - titulo;
@@ -68,7 +68,7 @@ O presente sistema possui as seguintes funcionalidades:
 - genero;
 - Estado (boolean);
 
-### 3 User
+3 User
 
 - id_user;
 - nome;
@@ -77,7 +77,7 @@ O presente sistema possui as seguintes funcionalidades:
 - nivelAcesso(Leitor, Funcionario);
 - estado(bolean);
 
-### 3 Emprestimos
+4 Emprestimos
 
 - id_leitor;
 - dataEmprestimo;
@@ -88,7 +88,7 @@ O presente sistema possui as seguintes funcionalidades:
 
 ## **Métodos**
 
-### 1 Biblioteca
+1 Biblioteca
 
 - ArrayList de Livros;
 - ArrayList de Leitores;
@@ -99,13 +99,13 @@ O presente sistema possui as seguintes funcionalidades:
 - Emprestar Livro;
 - Devolver Livro;
 
-### 2 Livros
+2 Livros
 
 - Registar;
 - Atualizar;
 - Eliminar;
 
-### 3 User
+3 User
 
 - Registar;
 - Atualizar;
@@ -114,7 +114,7 @@ O presente sistema possui as seguintes funcionalidades:
 - nivelAcesso(Leitor, Funcionario);
 - estado(bolean);
 
-### 3 Emprestimos
+4 Emprestimos
 
 - Registar;
 - Devolver;
