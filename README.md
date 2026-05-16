@@ -47,10 +47,10 @@ O presente sistema possui as seguintes funcionalidades:
 
 ## **Classes**
 
-- Biblioteca;
-- Livros;
-- User;
-- Emprestimos;
+- Biblioteca
+- Livro
+- Usuario
+- Emprestimo
 
 ---
 
@@ -58,31 +58,35 @@ O presente sistema possui as seguintes funcionalidades:
 
 1. Biblioteca
 
-- ...
+- listaLivros
+- listaUsuarios
+- listaEmprestimos
 
-2. Livros
+2. Livro
 
-- id_livro;
-- titulo;
-- autor;
-- genero;
-- Estado (boolean);
+- id
+- titulo
+- autor
+- genero
+- disponivel
 
-3. User
+3. Usuario
 
-- id_user;
-- nome;
-- email;
-- bi;
-- nivelAcesso(Leitor, Funcionario);
-- estado(bolean);
+- id
+- nome
+- email
+- bi
+- nivelAcesso
+- ativo
 
-  4.Emprestimos
+4. Emprestimo
 
-- id_leitor;
-- dataEmprestimo;
-- dataFimEmprestimo;
-- id_livro;
+- id
+- livro
+- usuario
+- dataEmprestimo
+- dataDevolucao
+- devolvido
 
 ---
 
@@ -90,37 +94,49 @@ O presente sistema possui as seguintes funcionalidades:
 
 1. Biblioteca
 
-- ArrayList de Livros;
-- ArrayList de Leitores;
-- ArrayList de Emprestimos;
-- Menu;
-- Adicionar Livro;
-- Listar Livro;
-- Emprestar Livro;
-- Devolver Livro;
+- menu()
+- adicionarLivro()
+- atualizarLivro()
+- eliminarLivro()
+- listarLivros()
+- adicionarUsuario()
+- atualizarUsuario()
+- bloquearUsuario()
+- eliminarUsuario()
+- adicionarEmprestimo()
+- devolverLivro()
+- verificarMulta()
+- carregarLivros()
+- carregarUsuarios()
+- carregarEmprestimos()
 
-2. Livros
+2. Livro
 
-- Registar;
-- Atualizar;
-- Eliminar;
+- cadastrar()
+- atualizar()
+- remover()
+- listar()
 
-3. User
+3. Usuario
 
-- Registar;
-- Atualizar;
-- Bloquear;
-- Eliminar;
-- nivelAcesso(Leitor, Funcionario);
-- estado(bolean);
+- cadastrar()
+- atualizar()
+- bloquear()
+- remover()
 
-4. Emprestimos
+4. Emprestimo
 
-- Registar;
-- Devolver;
-- Multa;
+- realizarEmprestimo()
+- devolverLivro()
+- calcularMulta()
 
 ---
+
+## **Ficheiros**
+
+- Livro;
+- Usuario;
+- Emprestimo;
 
 ## **Como Executar**
 
