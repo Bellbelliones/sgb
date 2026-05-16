@@ -7,7 +7,7 @@
 ## **INTEGRANTES**
 
 - **Faustino Marcos** : 2023 - 0156;
-- **Mily Dos Santos** : 2023 - 0934;
+- **Milicrisney Dos Santos** : 2023 - 0934;
 - **Rodolfo Guzman** : 2023 - 0090;
 
 ---
@@ -138,6 +138,10 @@ O presente sistema possui as seguintes funcionalidades:
 - Usuario;
 - Emprestimo;
 
+---
+
 ## **Como Executar**
 
 ## **Futuras melhorias**
+
+- Adicionar Login Para funcionarios(para ter controle de usuários)
