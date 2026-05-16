@@ -4,6 +4,6 @@
 
 ### **INTEGRANTES**
 
-- **Faustino Marcos ** : 2023 - XXXX
+- **Faustino Marcos** : 2023 - XXXX
 - **Mily XXXX** : 2023 - XXXX
-- **Rodolfo Guzman** : 2023 - XXXX
+- **Rodolfo Guzman** : 2023 - 0090
