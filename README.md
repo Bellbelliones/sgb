@@ -112,14 +112,14 @@ O presente sistema possui as seguintes funcionalidades:
 
 2. Livro
 
-- cadastrar()
+- Registar()
 - atualizar()
 - remover()
 - listar()
 
 3. Usuario
 
-- cadastrar()
+- Registar()
 - atualizar()
 - bloquear()
 - remover()
