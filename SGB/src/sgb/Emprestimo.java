@@ -17,9 +17,9 @@ public class Emprestimo {
     private DataLine dataEmprestimo;
     private DataLine dataDevolucao;
     private boolean devolvido;
-    
-    public Emprestimo(int id, String livro, String usuario, DataLine dataEmprestimo, DataLine dataDevolucao, boolean devolvido)
-    {
+
+    public Emprestimo(int id, String livro, String usuario, DataLine dataEmprestimo, DataLine dataDevolucao,
+            boolean devolvido) {
         this.id = id;
         this.livro = livro;
         this.usuario = usuario;
