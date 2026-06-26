@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package sgb;
 
-/**
- *
- * @author critical-trojan
- */
+import dados.Ficheiro;
+
 public class SGB {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        
+        Ficheiro.carregarTudo();
         Biblioteca.bbtc();
+        Ficheiro.salvarTudo();
+        
     }
     
 }
