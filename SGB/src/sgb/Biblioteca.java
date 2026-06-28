@@ -349,7 +349,7 @@ public class Biblioteca {
                         }
                     }
                 }
-                case 3 -> menuEmprestimos(ALU, "EmprestimosF");
+                case 3 -> menuEmprestimos(ALU,ALL, "EmprestimosF");
                 case 0 -> System.out.println("Terminando Sessao...");
                 default -> System.out.println("A opção inválida");
             }
@@ -585,7 +585,7 @@ public class Biblioteca {
                         }
                     }
                 }
-                case 3 -> menuEmprestimos(ALU, "Emprestimos");
+                case 3 -> menuEmprestimos(ALU,ALL, "Emprestimos");
                 case 0 -> System.out.println("Terminando Sessao...");
                 default -> System.out.println("A opção inválida");
             }
@@ -593,7 +593,7 @@ public class Biblioteca {
         return 0;
     }
 
-    private static void menuEmprestimos(ArrayList<Usuario> ALU, String qualMenu) {
+    private static void menuEmprestimos(ArrayList<Usuario> ALU,ArrayList <Livro> ALL, String qualMenu) {
         int escolha = 0;
         while (escolha != 5) {
             Menu(qualMenu);
@@ -611,9 +611,17 @@ public class Biblioteca {
                     String senhaEmp = pega.nextLine();
                     System.out.println("Titulo do livro:");
                     String livroEmp = pega.nextLine();
-                    System.out.println("Data de devolucao (Ex: 2026-07-10):");
-                    String dataDevEmp = pega.nextLine();
-                    Emprestimo.adicionarEmprestimo(Emprestimo.AEMP, ALU, livroEmp, emailEmp, senhaEmp, dataDevEmp);
+                    if(Livro.procuraLivroTitulo(livroEmp, ALL) ==-1)
+                    {
+                        System.out.println("O livro que deseja não foi encontrado\nEncerrando processo de emprestimo\n");
+                    }
+                    else
+                    {
+                        System.out.println("Data de devolucao (Ex: 2026-07-10):");
+                        String dataDevEmp = pega.nextLine();
+                        Emprestimo.adicionarEmprestimo(Emprestimo.AEMP, ALU,ALL, livroEmp, emailEmp, senhaEmp, dataDevEmp);
+                    
+                    }
                     espera();
                 }
                 case 2 -> {

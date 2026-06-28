@@ -1,0 +1,2 @@
+# id;livro;usuario;dataEmprestimo;dataDevolucao;dataRegistro;devolvido
+1;Re;Guzman;2026-06-27;2026-07-28;2026-06-27;false

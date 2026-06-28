@@ -60,7 +60,7 @@ public class Emprestimo {
     }
 
     public static void adicionarEmprestimo(ArrayList<Emprestimo> lista,
-            ArrayList<Usuario> usuarios, String livro,
+            ArrayList<Usuario> usuarios,ArrayList<Livro> ALL, String livro,
             String email, String senha, String dataDevolucao) {
 
         int idUser = Usuario.validarAcesso(usuarios, email, senha);

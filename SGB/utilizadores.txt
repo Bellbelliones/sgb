@@ -1,0 +1,4 @@
+# id;nome;email;senha;bi;nivelacesso;ativo
+0;Rodolfo Guzman;rodolfo@gmail.com;Guzman15@;123456789LA123;1;true
+1;monatan;montan@gmail.com;Montana15@;123456789LA051;2;false
+2;Guzman;guzman@gmail.com;Guzman15@;123456789LA123;3;true
