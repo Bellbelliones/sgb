@@ -110,14 +110,17 @@ public class Biblioteca {
             String senha = pega.nextLine();
 
             int index = Usuario.validarAcesso(ALU, email, senha);
-            if (index != -1)
-                return index;
-            else
+            if(index == -1)
                 System.out.println("E-mail ou Senha incorreta");
+            else if(index == -2)
+                System.out.println("Você foi bloquado!!\nPor favor dirija-se aos orgaos competentes da sua organizacao ou instituicao");
+            else
+                return index;
+            
             i--;
         }
         if (i < 1)
-            System.out.println("Numero maximo de tentativas excedidas!!!\nEncerrando o sistema!\n");
+            System.out.println("Numero maximo de tentativas excedidas!!!\nPor favor volte a tentar quando lembrar das suas credenciais\nEncerrando o sistema!\n");
         return 0;
     }
 
@@ -375,7 +378,7 @@ public class Biblioteca {
             switch (opcao) {
                 case 1 -> {
                     escolha = 0;
-                    while (escolha != 6) {
+                    while (escolha != 7) {
                         Menu("Livros");
                         escolha = pega.nextInt();
                         switch (escolha) {
@@ -453,14 +456,14 @@ public class Biblioteca {
                             case 5 -> {
                                 int index;
                                 System.out.println("╔══════════════════════════════╗");
-                                System.out.println("║        Remover Livro         ║");
+                                System.out.println("║  Bloquear/Desbloquear Livro  ║");
                                 System.out.println("╚══════════════════════════════╝");
                                 System.out.println("Como vai pesquisar?\n1 - ISBN\n2 - Titulo");
                                 switch (pega.nextInt()) {
                                     case 1 -> {
                                         System.out.println("Digite o ISBN-13");
                                         id = lerIsbn();
-                                        index = Livro.removerLivro(ALL, id, " ");
+                                        index = Livro.bloquearDesbloquearLivro(ALL, id, " ");
                                         if (index == 0) System.out.println("Livro removido com sucesso");
                                         else if (index == 2) System.out.println("Livro reativado\n");
                                     }
@@ -468,7 +471,7 @@ public class Biblioteca {
                                         pega.nextLine();
                                         System.out.println("Digite o Titulo");
                                         titulo = pega.nextLine();
-                                        index = Livro.removerLivro(ALL, -1, titulo);
+                                        index = Livro.bloquearDesbloquearLivro(ALL, -1, titulo);
                                         if (index == 0) System.out.println("Livro removido com sucesso");
                                         else if (index == 2) System.out.println("Livro reativado\n");
                                     }
@@ -476,7 +479,19 @@ public class Biblioteca {
                                 }
                                 espera();
                             }
-                            case 6 -> System.out.println("║          VOLTANDO           ║");
+                            case 6 -> {
+                                System.out.println("╔══════════════════════════════╗");
+                                System.out.println("║        Remover Livro         ║");
+                                System.out.println("╚══════════════════════════════╝");
+                                System.out.println("Digite o ISBN-13");
+                                id = lerIsbn();
+                                boolean state = Livro.removerLivro(ALL, id);
+                                if (state == true) System.out.println("Livro removido com sucesso");
+                                else System.out.println("Livro não removido!\nReveja se inseriu bem i ISBN\n");
+                                   
+                                espera();
+                            }
+                            case 7 -> System.out.println("║          VOLTANDO           ║");
                             default -> System.out.println("Opção inválida!");
                         }
                         id = 0; titulo = " "; autor = " "; genero = " ";
@@ -611,9 +626,14 @@ public class Biblioteca {
                     String senhaEmp = pega.nextLine();
                     System.out.println("Titulo do livro:");
                     String livroEmp = pega.nextLine();
-                    if(Livro.procuraLivroTitulo(livroEmp, ALL) ==-1)
+                    int retorno =Livro.procuraLivroTitulo(livroEmp, ALL);
+                    if(retorno ==-1)
                     {
                         System.out.println("O livro que deseja não foi encontrado\nEncerrando processo de emprestimo\n");
+                    }
+                    else if(!ALL.get(retorno).isDisponivel())
+                    {
+                        System.out.println("Livro Indisponivel");
                     }
                     else
                     {
@@ -730,8 +750,9 @@ public class Biblioteca {
                 System.out.println("║  [2] Atualizar               ║");
                 System.out.println("║  [3] Pesquisar               ║");
                 System.out.println("║  [4] Mostrar                 ║");
-                System.out.println("║  [5] Remover                 ║");
-                System.out.println("║  [6] Voltar                  ║");
+                System.out.println("║  [5] Bloquear/Desbloquear    ║");
+                System.out.println("║  [6] Remover                 ║");
+                System.out.println("║  [7] Voltar                  ║");
                 System.out.println("╚══════════════════════════════╝");
             }
             case "Usuarios" -> {

@@ -144,7 +144,7 @@ public class Livro {
         return 0;
     }
 
-    public static int removerLivro(ArrayList<Livro> ALL, long id, String titulo) {
+    public static int bloquearDesbloquearLivro(ArrayList<Livro> ALL, long id, String titulo) {
         int index = -1;
 
         if (id != -1)
@@ -168,7 +168,14 @@ public class Livro {
         livro.setDisponivel(false);
         return 0;
     }
+public static boolean removerLivro(ArrayList<Livro> ALL, long id) {
+        int index = procuraLivroId(id, ALL);
+        if (index == -1)
+            return false;
 
+        ALL.remove(index);
+        return true;
+    }
     public static void reativarLivro(ArrayList<Livro> ALL, int index) {
         ALL.get(index).setDisponivel(true);
     }

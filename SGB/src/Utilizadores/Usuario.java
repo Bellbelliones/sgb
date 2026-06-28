@@ -215,6 +215,9 @@ public class Usuario {
             return -1;
         else if (ALU.get(index).senha.compareTo(senha) != 0)
             return -1;
+        else if(!ALU.get(index).isAtivo() )
+            return -2;
+        
         return ALU.get(index).id;
     }
 
