@@ -8,7 +8,7 @@ import dados.Ficheiro;
 public class Biblioteca {
 
     public static Scanner pega = new Scanner(System.in);
-
+// Responsaveis pelo acesso ao sistema e distribuição de nivel
     // <editor-fold defaultstate="collapsed" desc="Funções de Acesso">
 
     public static int login(ArrayList<Usuario> ALU) {
@@ -160,6 +160,9 @@ public class Biblioteca {
 
     // </editor-fold>
 
+    
+    // Aqui é onde estão os três tipos de menus com as suas acções olhando
+    // pelo lado do ADM, funcionario e leitor
     // <editor-fold defaultstate="collapsed" desc="Dashborads">
     public static int LeitorDasboard(ArrayList<Livro> ALL) {
         int opcao = -1;
@@ -676,6 +679,7 @@ public class Biblioteca {
     }
     // </editor-fold>
 
+    
     // <editor-fold defaultstate="collapsed" desc="Validacoes por regex">
 
     public static String lerEmail() {
@@ -714,6 +718,7 @@ public class Biblioteca {
     }
     // </editor-fold>
 
+    //Os menus estão armazenados aqui
     // <editor-fold defaultstate="collapsed" desc="Funções de interface exibição">
 
     public static void Menu(String qual) {
@@ -803,6 +808,8 @@ public class Biblioteca {
     }
     // </editor-fold>
 
+    // funcoes usados para algumas situacoes no sistema, como pausar a 
+    // tela antes prosseguir
     // <editor-fold defaultstate="collapsed" desc="Utilitáios">
     public static void espera() {
         try {
@@ -819,6 +826,13 @@ public class Biblioteca {
     }
     // </editor-fold>
 
+    // É aqui onde se encontra a função principal junto de parametros de carragemento
+    // de usuarios, emprestimos e livros 
+    // E ela também é a função principal que sera chamada na main
+    // Usamos este jeito para poder possivelmente no futuro, se quisermos
+    // alterar ou criar um outro metodo ou jeito de funcionamento do sistema
+    // sem depender do github para versionamento, podermos criar outras funções para 
+    // executarem como função principal
     // <editor-fold defaultstate="collapsed" desc="Função principal">
     public static int bbtc() {
         // Usa as listas "donas" de cada classe (carregadas pelo Ficheiro)

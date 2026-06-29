@@ -1,6 +1,6 @@
 <h1 align="center"> SGB </h1>
 
-<h2 align="center"> SISTAMA DE GESTÃO DE BIBLIOTECA </h2>
+<h2 align="center"> SISTEMA DE GESTÃO DE BIBLIOTECA </h2>
 
 ---
 
@@ -22,16 +22,33 @@ Este **Sistema de Gestão de Biblioteca** tem por finalidade melhorar a gestão 
 
 O presente sistema possui as seguintes funcionalidades:
 
+### Para os Livros
+
 - Registar livros;
 - Atualizar Livros;
-- Eliminar Livros;
-- Registar Eleitores;
-- Atualizar Leitores;
-- Eliminar Leitor;
-- Bloquear Leitor;
-- Registar Emprestimos;
-- Conferir Devoulções;
-- Controlar Multas;
+- Pesquisar Livros;
+- Mostrar Livros;
+- Bloquear/Desbloquear Livros;
+- Remover Livros;
+
+### Para Usuarios
+
+- Iniciar Sessão
+- Registar-se pela primeira vez como adm
+- Recuperar Senha
+
+- Registar Usuario;
+- Atualizar Usuario;
+- Bloquear/Desbloquear Usuario;
+- Remover Usuario;
+- Mostrar Usuario;
+
+### Para Emprestimos
+
+- Registar Emprestimo;
+- Devolver Emprestimo;
+- Mostrar Emprestimo;
+- Multa;
 
 ---
 
@@ -43,6 +60,50 @@ O presente sistema possui as seguintes funcionalidades:
 
 ## **Estrutura do Projecto**
 
+```text
+SGB
+├── build
+│   ├── built-jar.properties
+│   ├── classes
+│   │   ├── dados
+│   │   │   └── Ficheiro.class
+│   │   ├── sgb
+│   │   │   ├── Biblioteca.class
+│   │   │   ├── Emprestimo.class
+│   │   │   ├── Livro.class
+│   │   │   ├── SGB.class
+│   │   │   └── Usuario.class
+│   │   └── Utilizadores
+│   │       └── Usuario.class
+│   ├── empty
+│   └── generated-sources
+│       └── ap-source-output
+├── build.xml
+├── emprestimos.txt
+├── livros.txt
+├── manifest.mf
+├── nbproject
+│   ├── build-impl.xml
+│   ├── genfiles.properties
+│   ├── private
+│   │   ├── private.properties
+│   │   └── private.xml
+│   ├── project.properties
+│   └── project.xml
+├── src
+│   ├── dados
+│   │   └── Ficheiro.java
+│   ├── sgb
+│   │   ├── Biblioteca.java
+│   │   ├── Emprestimo.java
+│   │   ├── Livro.java
+│   │   └── SGB.java
+│   └── Utilizadores
+│       └── Usuario.java
+├── test
+└── utilizadores.txt
+```
+
 ---
 
 ## **Classes**
@@ -51,6 +112,7 @@ O presente sistema possui as seguintes funcionalidades:
 - Livro
 - Usuario
 - Emprestimo
+- Ficheiro
 
 ---
 
@@ -88,47 +150,86 @@ O presente sistema possui as seguintes funcionalidades:
 - dataDevolucao
 - devolvido
 
+5. Ficheiro
+
+- LIVROS (livro.txt);
+- UTILIZADORES (utilizadores.txt);
+- EMPRESTIMOS (emprestimos.txt);
+
 ---
 
 ## **Métodos**
 
+0. SGB(A main)
+
+- carregarTudo();// Carrega todas os dados guardados em ficheiros permanentemente para os ArrayList
+- bbtc();
+- salvarTudo(); //Salva todos os dados armazenados nos ArrayList
+
 1. Biblioteca
 
-- menu()
-- adicionarLivro()
-- atualizarLivro()
-- eliminarLivro()
-- listarLivros()
-- adicionarUsuario()
-- atualizarUsuario()
-- bloquearUsuario()
-- eliminarUsuario()
-- adicionarEmprestimo()
-- devolverLivro()
-- verificarMulta()
-- carregarLivros()
-- carregarUsuarios()
-- carregarEmprestimos()
+- login();
+- cadastrarSe();
+- iniciarSessao();
+- recuperarSenha();
+- LeitorDasboard();
+- FuncionarioDasboard();
+- AdministradorDasboard();
+- menuEmprestimo();
+- lerEmail();
+- lerBi();
+- lerIsbn();
+- lerNivelAcesso();
+- Menu();
+- espera();
+- limitarTexto();
+- bbtc();
 
 2. Livro
 
-- Registar()
-- atualizar()
-- remover()
-- listar()
+- inserirLivro();
+- mostrarLivros();
+- procurarLivroId();
+- procurarLivroTitulo();
+- atualizarLivro();
+- pesquisarLivro();
+- bloquearDesbloquearLivro();
+- removerLivro();
+- reativarLivro();
 
 3. Usuario
 
-- Registar()
-- atualizar()
-- bloquear()
-- remover()
+- inserirUsuario();
+- procurarUsuarioId();
+- procurarUsuarioGmail();
+- atualizarUsuario();
+- mostrarUsuario();
+- bloquearDesbloquearUsuario();
+- removerUsuario();
+- gmailVerificacao();
+- senhaVerificacao();
+- validarAcesso();
+- contaUsuarios();
 
 4. Emprestimo
 
-- realizarEmprestimo()
-- devolverLivro()
-- calcularMulta()
+- inserirEmprestimo();
+- adicionarEmprestimo();
+- mostrarEmprestimos();
+- devolverLivro();
+- calcularMulta();
+- mostrarMulta();
+
+5. Ficheiro
+
+- salvarLivros();
+- carregarLivros();
+- salvarUsuarios();
+- carregarUsuarios();
+- salvarEmprestimos();
+- carregarEmprestimos();
+- salvarTudo();
+- carregarTudo();
 
 ---
 
@@ -141,6 +242,12 @@ O presente sistema possui as seguintes funcionalidades:
 ---
 
 ## **Como Executar**
+
+- Baixar o programa para computador (NETBEANS);
+- Clicar no botão file;
+- Clicar em open project;
+- Procurar pela pasta do projecto na aba que irá pedir para adicionar o projecto no ambiente do netbeans;
+- Clicar na tecla F6 ou botão run do neatbean;
 
 ## **Futuras melhorias**
 
