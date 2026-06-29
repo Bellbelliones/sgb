@@ -251,4 +251,4 @@ SGB
 
 ## **Futuras melhorias**
 
-- Adicionar Login Para funcionarios(para ter controle de usuários)
+- Levar o sistema ao mercado
