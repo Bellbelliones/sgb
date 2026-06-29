@@ -464,16 +464,16 @@ public class Biblioteca {
                                         System.out.println("Digite o ISBN-13");
                                         id = lerIsbn();
                                         index = Livro.bloquearDesbloquearLivro(ALL, id, " ");
-                                        if (index == 0) System.out.println("Livro removido com sucesso");
-                                        else if (index == 2) System.out.println("Livro reativado\n");
+                                        if (index == 0) System.out.println("Livro bloqueado com sucesso");
+                                        else if (index == 2) System.out.println("Livro Desbloquado\n");
                                     }
                                     case 2 -> {
                                         pega.nextLine();
                                         System.out.println("Digite o Titulo");
                                         titulo = pega.nextLine();
                                         index = Livro.bloquearDesbloquearLivro(ALL, -1, titulo);
-                                        if (index == 0) System.out.println("Livro removido com sucesso");
-                                        else if (index == 2) System.out.println("Livro reativado\n");
+                                        if (index == 0) System.out.println("Livro bloqueado com sucesso");
+                                        else if (index == 2) System.out.println("Livro Desbloquado\n");
                                     }
                                     default -> System.out.println("Opcao invalida, retornando ao menu dos livros");
                                 }
@@ -487,7 +487,7 @@ public class Biblioteca {
                                 id = lerIsbn();
                                 boolean state = Livro.removerLivro(ALL, id);
                                 if (state == true) System.out.println("Livro removido com sucesso");
-                                else System.out.println("Livro não removido!\nReveja se inseriu bem i ISBN\n");
+                                else System.out.println("Livro não removido!\nReveja se inseriu bem o ISBN\n");
                                    
                                 espera();
                             }

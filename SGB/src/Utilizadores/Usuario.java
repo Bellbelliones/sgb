@@ -225,7 +225,5 @@ public class Usuario {
         return ALU.size();
     }
 
-    public static void mascararSenha() {
-    }
     // </editor-fold>
 }
